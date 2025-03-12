@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MudBlazor" Version="5.0.15" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(Configuration)' == 'Release' ">
+        <PackageReference Include="Kharazmi" Version="2.0.0" />
+        <PackageReference Include="Kharazmi.BackgroundJob" Version="2.0.0" />
+        <PackageReference Include="Kharazmi.Common" Version="2.0.0" />
+        <PackageReference Include="Kharazmi.EfCore.Cache" Version="2.0.0" />
+        <PackageReference Include="Kharazmi.EfCore" Version="2.0.0" />
+        <PackageReference Include="Kharazmi.EventStore.EfCore" Version="2.0.0" />
+        <PackageReference Include="Kharazmi.Localization.EfCore" Version="2.0.0" />
+        <PackageReference Include="Kharazmi.Localization" Version="2.0.0" />
+        <PackageReference Include="Kharazmi.MongoDb.Cache" Version="2.0.0" />
+        <PackageReference Include="Kharazmi.MongoDb" Version="2.0.0" />
+        <PackageReference Include="Kharazmi.Mvc" Version="2.0.0" />
+        <PackageReference Include="Kharazmi.OpenIdConnect" Version="2.0.0" />
+        <PackageReference Include="Kharazmi.RabbitMq" Version="2.0.0" />
+        <PackageReference Include="Kharazmi.Redis" Version="2.0.0" />
+        <PackageReference Include="Kharazmi.Validation" Version="2.0.0" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
+        <ProjectReference Include="..\..\src\Kharazmi.BackgroundJob\Kharazmi.BackgroundJob.csproj" />
+        <ProjectReference Include="..\..\src\Kharazmi.Common\Kharazmi.Common.csproj" />
+        <ProjectReference Include="..\..\src\Kharazmi.EfCore.Cache\Kharazmi.EfCore.Cache.csproj" />
+        <ProjectReference Include="..\..\src\Kharazmi.EfCore\Kharazmi.EfCore.csproj" />
+        <ProjectReference Include="..\..\src\Kharazmi.EventStore.EfCore\Kharazmi.EventStore.EfCore.csproj" />
+        <ProjectReference Include="..\..\src\Kharazmi.Localization.EfCore\Kharazmi.Localization.EfCore.csproj" />
+        <ProjectReference Include="..\..\src\Kharazmi.Localization\Kharazmi.Localization.csproj" />
+        <ProjectReference Include="..\..\src\Kharazmi.MongoDb.Cache\Kharazmi.MongoDb.Cache.csproj" />
+        <ProjectReference Include="..\..\src\Kharazmi.MongoDb\Kharazmi.MongoDb.csproj" />
+        <ProjectReference Include="..\..\src\Kharazmi.Mvc\Kharazmi.Mvc.csproj" />
+        <ProjectReference Include="..\..\src\Kharazmi.OpenIdConnect\Kharazmi.OpenIdConnect.csproj" />
+        <ProjectReference Include="..\..\src\Kharazmi.RabbitMq\Kharazmi.RabbitMq.csproj" />
+        <ProjectReference Include="..\..\src\Kharazmi.Redis\Kharazmi.Redis.csproj" />
+        <ProjectReference Include="..\..\src\Kharazmi.Validation\Kharazmi.Validation.csproj" />
+        <ProjectReference Include="..\..\src\Kharazmi\Kharazmi.csproj" />
+    </ItemGroup>
+
+</Project>

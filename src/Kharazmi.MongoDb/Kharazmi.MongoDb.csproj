@@ -1,0 +1,62 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GenerateAssemblyConfigurationAttribute>true</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>true</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>true</GenerateAssemblyProductAttribute>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+
+    <Title>Kharazmi</Title>
+    <Authors>Koorsha Shirazi</Authors>
+    <Description>Kharazmi.MongoDb is a library implements the repository pattern on top of MongoDB. Support UnitOfWork, Mutiple client cluster.</Description>
+    <RootNamespace>Kharazmi.Localization</RootNamespace>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/KharazmiPet</RepositoryUrl>
+    <PackageTags>Microsoft;.NET5; MongoDb; UnitOfWork; Generic Repository;</PackageTags>
+    <Copyright>Copyright @ 2020 Kharazmi, by Koorsha Shirazi.</Copyright>
+
+    <PackageVersion>2.0.0</PackageVersion>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\assets\icon.png" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <PlatformTarget>anycpu</PlatformTarget>
+  </PropertyGroup>
+
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net5.0'">
+    <DefineConstants>NET5_0</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="5.0.0" />
+    <PackageReference Include="MongoDB.Bson" Version="2.12.3" />
+    <PackageReference Include="MongoDB.Driver" Version="2.12.3" />
+  </ItemGroup>
+
+
+  <ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ProjectReference Include="..\Kharazmi\Kharazmi.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(Configuration)' == 'Release' ">
+    <PackageReference Include="Kharazmi" Version="2.0.0" />
+  </ItemGroup>
+
+
+
+</Project>

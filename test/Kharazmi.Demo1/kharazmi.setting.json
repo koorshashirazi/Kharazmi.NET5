@@ -1,0 +1,1287 @@
+{
+  "FrameworkSettings": {
+    "MongoOptions": {
+      "UseDatabaseInstaller": true,
+      "UseSecondLevelCache": false,
+      "SecondLevelCacheOption": {
+        "CacheProvider": "RedisDb",
+        "CacheProviders": [
+          "ModeLess",
+          "HostMemory",
+          "Distributed",
+          "RedisDb"
+        ],
+        "CacheProviderOptionKey": "DEV_APP2_MONGO_REDIS_CACHE"
+      },
+      "DefaultOption": "DEV_APP2_MONGO_WRITE",
+      "ChildOptions": [
+        {
+          "ApplicationName": "DEV_APP2_MONGO_DISTRIBUTED_CACHE",
+          "ReplicaSetName": "rs0",
+          "Database": "DEV_APP2_DISTRIBUTED_CACHE",
+          "UserName": "",
+          "Password": "",
+          "ConnectionString": "",
+          "Host": "127.0.0.1",
+          "Port": 27017,
+          "ThrowIfMigrationFailed": false,
+          "Localization": "de",
+          "DatabaseVersion": "",
+          "DocumentTypesAssembly": "*",
+          "EnableMigration": true,
+          "MigrationStrategy": "CreateIfNotExist",
+          "MigrationStrategies": [
+            "Ignore",
+            "CreateDropOnce",
+            "AlwaysCreateDrop",
+            "DropIfExist",
+            "CreateIfNotExist"
+          ],
+          "EnableSeed": false,
+          "SeedWithReplace": false,
+          "ExpiredScanInterval": "00:00:10",
+          "HealthCheckOption": {
+            "Name": "DEV_APP2_MONGO_DISTRIBUTED_CACHE",
+            "Tags": [
+              "MongoDb"
+            ],
+            "CheckTimeOut": "00:00:10",
+            "Period": "00:00:30",
+            "UseHealthCheck": true,
+            "Attempts": -1,
+            "Username": "",
+            "Password": "",
+            "ApiKey": "",
+            "Metadata": {}
+          },
+          "Enable": true,
+          "OptionKey": "DEV_APP2_MONGO_DISTRIBUTED_CACHE"
+        },
+        {
+          "ApplicationName": "DEV_APP2_MONGO_READ",
+          "ReplicaSetName": "rs0",
+          "Database": "DEV_APP2_READ",
+          "UserName": "",
+          "Password": "",
+          "ConnectionString": "",
+          "Host": "127.0.0.1",
+          "Port": 27017,
+          "ThrowIfMigrationFailed": false,
+          "Localization": "en",
+          "DatabaseVersion": "1.0.0",
+          "DocumentTypesAssembly": "HMP.SheredModdel.Test",
+          "EnableMigration": true,
+          "MigrationStrategy": "AlwaysCreateDrop",
+          "MigrationStrategies": [
+            "Ignore",
+            "CreateDropOnce",
+            "AlwaysCreateDrop",
+            "DropIfExist",
+            "CreateIfNotExist"
+          ],
+          "EnableSeed": true,
+          "SeedWithReplace": true,
+          "ExpiredScanInterval": "00:03:00",
+          "HealthCheckOption": {
+            "Name": "DEV_APP2_MONGO_READ",
+            "Tags": [
+              "MongoDb"
+            ],
+            "CheckTimeOut": "00:00:10",
+            "Period": "00:00:30",
+            "UseHealthCheck": true,
+            "Attempts": -1,
+            "Username": "",
+            "Password": "",
+            "ApiKey": "",
+            "Metadata": {}
+          },
+          "Enable": true,
+          "OptionKey": "DEV_APP2_MONGO_READ"
+        },
+        {
+          "ApplicationName": "DEV_APP2_MONGO_WRITE",
+          "ReplicaSetName": "rs0",
+          "Database": "DEV_APP2_WRITE",
+          "UserName": "",
+          "Password": "",
+          "ConnectionString": "",
+          "Host": "127.0.0.1",
+          "Port": 27017,
+          "ThrowIfMigrationFailed": false,
+          "Localization": "en",
+          "DatabaseVersion": "1.0.0",
+          "DocumentTypesAssembly": "HMP.SheredModdel.Test",
+          "EnableMigration": true,
+          "MigrationStrategy": "AlwaysCreateDrop",
+          "MigrationStrategies": [
+            "Ignore",
+            "CreateDropOnce",
+            "AlwaysCreateDrop",
+            "DropIfExist",
+            "CreateIfNotExist"
+          ],
+          "EnableSeed": true,
+          "SeedWithReplace": true,
+          "ExpiredScanInterval": "00:03:00",
+          "HealthCheckOption": {
+            "Name": "DEV_APP2_MONGO_WRITE",
+            "Tags": [
+              "MongoDb"
+            ],
+            "CheckTimeOut": "00:00:10",
+            "Period": "00:00:30",
+            "UseHealthCheck": true,
+            "Attempts": 1,
+            "Username": "",
+            "Password": "",
+            "ApiKey": "",
+            "Metadata": {}
+          },
+          "Enable": true,
+          "OptionKey": "DEV_APP2_MONGO_WRITE"
+        }
+      ],
+      "Enable": true
+    },
+    "HangfireOption": {
+      "UseDashboard": false,
+      "UseAuthorization": false,
+      "AppPath": "",
+      "PrefixPath": "",
+      "StatsPollingInterval": 0,
+      "DisplayStorageConnectionString": false,
+      "DashboardTitle": "",
+      "IgnoreAntiforgeryToken": false,
+      "PolicyName": "",
+      "PathMatch": "",
+      "CancellationFromSeconds": 0,
+      "Attempts": 3,
+      "DelaysInSeconds": [
+        5,
+        10,
+        15
+      ],
+      "JobStorageType": "InMemory",
+      "JobStorageTypes": [
+        "InMemory",
+        "Redis",
+        "MongoDb"
+      ],
+      "LoggerProvider": "",
+      "LoggerProviders": [
+        "None",
+        "Console",
+        "Default",
+        "Serilog"
+      ],
+      "MinLogger": 0,
+      "MaximumJobsFailed": null,
+      "MinimumAvailableServers": null,
+      "HangfireServerOption": {
+        "ServerName": "",
+        "WorkerCount": 20,
+        "Queues": [
+          "default"
+        ],
+        "StopTimeout": "00:00:00",
+        "ShutdownTimeout": "00:00:15",
+        "SchedulePollingInterval": "00:00:15",
+        "HeartbeatInterval": "00:00:30",
+        "ServerCheckInterval": "00:05:00",
+        "ServerTimeout": "00:05:00",
+        "CancellationCheckInterval": "00:00:05"
+      },
+      "HangfireInMemoryStorageOption": {
+        "JobExpirationCheckInterval": "01:00:00",
+        "CountersAggregateInterval": "00:05:00"
+      },
+      "HangfireRedisStorageOption": {
+        "ConnectionString": "localhost:6379,abortConnect=true,ssl=false",
+        "Prefix": "{hangfire}:",
+        "Db": 0,
+        "InvisibilityTimeout": "00:30:00",
+        "FetchTimeout": "00:03:00",
+        "ExpiryCheckInterval": "01:00:00",
+        "SucceededListSize": 499,
+        "DeletedListSize": 499,
+        "LifoQueues": [],
+        "UseTransactions": true,
+        "HealthCheckOption": {
+          "Name": "9f1a71982363410e95cb0754791128b7",
+          "Tags": [],
+          "CheckTimeOut": "00:00:10",
+          "Period": "00:00:30",
+          "UseHealthCheck": true,
+          "Attempts": -1,
+          "Username": "",
+          "Password": "",
+          "ApiKey": "",
+          "Metadata": {}
+        }
+      },
+      "HangfireMongoStorageOption": {
+        "Prefix": "hangfire",
+        "ConnectionString": "mongodb://localhost:27017/hangfire",
+        "QueuePollInterval": "00:00:15",
+        "InvisibilityTimeout": "00:00:00",
+        "DistributedLockLifetime": "00:00:30",
+        "MigrationLockTimeout": "00:01:00",
+        "CheckConnection": true,
+        "ConnectionCheckTimeout": "00:00:05",
+        "JobExpirationCheckInterval": "01:00:00",
+        "CountersAggregateInterval": "00:05:00",
+        "HealthCheckOption": {
+          "Name": "43eedafa129444cb880d4e6f9def0f97",
+          "Tags": [],
+          "CheckTimeOut": "00:00:10",
+          "Period": "00:00:30",
+          "UseHealthCheck": true,
+          "Attempts": -1,
+          "Username": "",
+          "Password": "",
+          "ApiKey": "",
+          "Metadata": {}
+        }
+      },
+      "HealthCheckOption": {
+        "Name": "ffc73f0e72884be28bcbcdf24cf69656",
+        "Tags": [],
+        "CheckTimeOut": "00:00:10",
+        "Period": "00:00:30",
+        "UseHealthCheck": true,
+        "Attempts": -1,
+        "Username": "",
+        "Password": "",
+        "ApiKey": "",
+        "Metadata": {}
+      },
+      "Enable": false
+    },
+    "LoggerOption": {
+      "UseCorrelationDomainMetadata": true,
+      "MinimumLevel": "Verbose",
+      "SwitchLevelTo": "",
+      "MinimumLevelOverrides": {
+        "Default": "Verbose"
+      },
+      "ExcludePaths": null,
+      "ExcludeProperties": null,
+      "Tags": null,
+      "LogApplication": true,
+      "UseConsole": true,
+      "ConsoleLoggerOption": {
+        "Level": "Verbose",
+        "Levels": [
+          "Verbose",
+          "Debug",
+          "Information",
+          "Warning",
+          "Error",
+          "Fatal"
+        ],
+        "SwitchLevelTo": "",
+        "StandardErrorFromLevel": "",
+        "OutputTemplate": "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}"
+      },
+      "UseFile": true,
+      "FileLoggerOption": {
+        "Level": "Error",
+        "Levels": [
+          "Verbose",
+          "Debug",
+          "Information",
+          "Warning",
+          "Error",
+          "Fatal"
+        ],
+        "SwitchLevelTo": "",
+        "UseJsonFormatter": true,
+        "FilePath": "Logging\\ba9a431e8a804a6b939bbe3a1faf3d21.json",
+        "OutputTemplate": "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}",
+        "FileSizeLimitBytes": 1073741824,
+        "IsBuffered": false,
+        "IsShared": false,
+        "FlushDiskInterval": null,
+        "RollOnFileSizeLimit": true,
+        "RollingIntervalType": "Hour",
+        "RollingIntervals": [
+          "Infinite",
+          "Year",
+          "Month",
+          "Day",
+          "Hour",
+          "Minute"
+        ],
+        "RetainedFileCountLimit": 31
+      },
+      "UseSeq": true,
+      "SeqLoggerOption": {
+        "Level": "Verbose",
+        "Levels": [
+          "Verbose",
+          "Debug",
+          "Information",
+          "Warning",
+          "Error",
+          "Fatal"
+        ],
+        "SwitchLevelTo": "",
+        "ServerUrl": "http://localhost:11433",
+        "BatchPostingLimit": 1000,
+        "Period": "00:00:02",
+        "ApiKey": "",
+        "BufferBaseFilename": "",
+        "BufferSizeLimitBytes": null,
+        "EventBodyLimitBytes": 262144,
+        "RetainedInvalidPayloadsLimitBytes": null,
+        "QueueSizeLimit": 100000,
+        "Compact": false,
+        "UseHealthCheck": true,
+        "HealthCheckOption": {
+          "Name": "LOGGER_SEQ",
+          "Tags": [
+            "seq",
+            "logger"
+          ],
+          "CheckTimeOut": "00:00:10",
+          "Period": "00:00:30",
+          "Attempts": 1,
+          "Username": "",
+          "Password": "",
+          "ApiKey": "MeMu5HYZmLnYBU3KMMsC",
+          "Metadata": {}
+        }
+      },
+      "UseElastic": false,
+      "ElasticsearchLoggerOption": {
+        "AutoRegisterTemplate": false,
+        "OverwriteTemplate": false,
+        "FormatStackTraceAsArray": false,
+        "DetectElasticsearchVersion": false,
+        "InlineFields": false,
+        "NumberOfShards": null,
+        "NumberOfReplicas": null,
+        "BatchPostingLimit": 50,
+        "QueueSizeLimit": 100000,
+        "BufferFileCountLimit": 31,
+        "SingleEventSizePostingLimit": null,
+        "BufferFileSizeLimitBytes": 104857600,
+        "BufferRetainedInvalidPayloadsLimitBytes": null,
+        "Level": "Verbose",
+        "Levels": [
+          "Verbose",
+          "Debug",
+          "Information",
+          "Warning",
+          "Error",
+          "Fatal"
+        ],
+        "SwitchLevelTo": "",
+        "NodeUris": "http://localhost:9200",
+        "TemplateName": "serilog-events-template",
+        "IndexFormat": "logstash-{0:yyyy.MM.dd}",
+        "DeadLetterIndexName": "deadletter-{0:yyyy.MM.dd}",
+        "TypeName": "logevent",
+        "AutoRegisterTemplateVersion": "ESv7",
+        "RegisterTemplateFailure": "IndexAnyway",
+        "BatchAction": "Index",
+        "EmitEventFailure": "WriteToSelfLog",
+        "PipelineName": "",
+        "BufferBaseFilename": "",
+        "Period": "00:00:02",
+        "ConnectionTimeout": "00:00:05",
+        "BufferLogShippingInterval": null,
+        "IndexAliases": [],
+        "TemplateCustomSettings": {},
+        "ConnectionSettings": {
+          "SniffOnConnectionFault": true,
+          "SniffOnStartup": true,
+          "EnableHttpCompression": true,
+          "EnableHttpPipelining": true,
+          "DisableAutomaticProxyDetection": true,
+          "ThrowExceptions": true,
+          "DisablePing": true,
+          "PrettyJson": true,
+          "IncludeServerStackTraceOnError": true,
+          "DisableDirectStreaming": true,
+          "TransferEncodingChunked": true,
+          "UseTcpKeepAlive": false,
+          "UseBasicAuthentication": true,
+          "UseApiKeyAuthentication": false,
+          "UseClientCertificates": false,
+          "UseProxy": false,
+          "MaximumRetries": null,
+          "ConnectionLimit": 80,
+          "SkipDeserializationForStatusCodes": null,
+          "UserAgent": "",
+          "SniffLifeSpan": "01:00:00",
+          "RequestTimeout": "00:01:00",
+          "PingTimeout": "00:00:03",
+          "DeadTimeout": null,
+          "MaxDeadTimeout": null,
+          "MaxRetryTimeout": null,
+          "DnsRefreshTimeout": null,
+          "GlobalQueryStringParameters": null,
+          "GlobalHeaders": null,
+          "Proxy": null,
+          "TcpKeepAlive": null,
+          "BasicAuthentication": {
+            "Username": "elastic",
+            "Password": "changeme"
+          },
+          "ApiKeyAuthentication": null,
+          "ClientCertificates": null
+        },
+        "ConnectionPoolTypeAssembly": "",
+        "FormatProviderTypeAssembly": "",
+        "ConnectionTypeAssembly": "",
+        "SerializerTypeAssembly": "",
+        "CustomFormatterTypeAssembly": "",
+        "CustomDurableFormatterTypeAssembly": "",
+        "FailureSinkTypeAssembly": "",
+        "UseHealthCheck": true,
+        "HealthCheckOption": {
+          "Name": "LOGGER_ELASTICSEARCH",
+          "Tags": [
+            "Elasticsearch",
+            "Logger",
+            "Serilog"
+          ],
+          "CheckTimeOut": "00:00:10",
+          "Period": "00:00:30",
+          "Attempts": -1,
+          "Username": "",
+          "Password": "",
+          "ApiKey": "",
+          "Metadata": {}
+        }
+      },
+      "UseHealthCheck": true,
+      "HealthCheckOption": {
+        "Name": "a6cb268145994ad6aed0c251e4c4e6cd",
+        "Tags": [],
+        "CheckTimeOut": "00:00:10",
+        "Period": "00:00:30",
+        "Attempts": -1,
+        "Username": "",
+        "Password": "",
+        "ApiKey": "",
+        "Metadata": {}
+      },
+      "Enable": true
+    },
+    "ApplicationOption": {
+      "Title": "Dev App2",
+      "Name": "DevApp2",
+      "Version": "1",
+      "ApplicationMetadata": {},
+      "Enable": true
+    },
+    "BusOption": {
+      "UseSubscriber": true,
+      "UseBusPublisher": true,
+      "DefaultProvider": "RabbitMq",
+      "BusProviders": [
+        "RabbitMq",
+        "Redis"
+      ],
+      "UseBusStorage": false,
+      "BusStoreOption": null,
+      "Enable": true
+    },
+    "CacheOption": {
+      "UseInMemoryCache": true,
+      "UseInMemoryNotificationStore": true,
+      "CacheManagerType": "RedisDb",
+      "CacheManagerTypes": [
+        "ModeLess",
+        "HostMemory",
+        "RedisDb"
+      ],
+      "CacheProviderOptionKey": "DEV_APP2_REDIS_CACHE",
+      "UseDistributedCache": true,
+      "DistributedCacheManagerType": "RedisDb",
+      "DistributedCacheManagerTypes": [
+        "RedisDb",
+        "MongoDb",
+        "HostMemory",
+        "ModeLess"
+      ],
+      "DistributedProviderOptionKey": "DEV_APP2_DISTRIBUTED_REDIS_CACHE",
+      "ExpirationOption": {
+        "AbsoluteExpiration": "01:01:10",
+        "SlidingExpiration": "00:05:00"
+      },
+      "Enable": true
+    },
+    "DomainOption": {
+      "UseDispatchers": true,
+      "DispatchAsynchronous": true,
+      "UseEventProcessor": true,
+      "UseAutoRegisterHandler": true,
+      "AssemblyHandler": "HMP.DevApp2.Test",
+      "UseDomainValidation": true,
+      "AssemblyDomainValidation": "HMP.DevApp2.Test",
+      "UseDomainMetadata": true,
+      "DomainMetadataOption": {
+        "UseAssemblyName": true,
+        "UseMachineName": true,
+        "UseUserMetadata": true,
+        "UseUserClaimsMetadata": true,
+        "UseHttpMetadata": true,
+        "UseDomainId": true,
+        "DomainIdMetadataOption": {
+          "RequestHeader": "X-Domain-Id",
+          "ResponseHeader": "X-Domain-Id",
+          "EnsureExistInHeader": false,
+          "WriteToLoggingScope": false,
+          "LoggingScopeKey": "#DomainId",
+          "WriteToResponse": true,
+          "ReplaceWithTraceId": false,
+          "DomainIdGenerator": null
+        }
+      },
+      "RetryOption": {
+        "Attempt": 1,
+        "MinDelay": 0,
+        "MaxDelay": 3,
+        "RetryOnExceptionTypes": []
+      },
+      "CommandPipelines": [
+        {
+          "Key": "LoggerCommandPipeline",
+          "Value": true
+        },
+        {
+          "Key": "ValidationCommandPipeline",
+          "Value": true
+        },
+        {
+          "Key": "TransientFaultCommandPipeline",
+          "Value": true
+        }
+      ],
+      "EventPipelines": [
+        {
+          "Key": "LoggerDomainEventPipeline",
+          "Value": true
+        },
+        {
+          "Key": "TransientFaultDomainEventPipeline",
+          "Value": true
+        },
+        {
+          "Key": "InboxEventPipeline",
+          "Value": true
+        }
+      ],
+      "QueryPipelines": [
+        {
+          "Key": "LoggerQueryPipeline",
+          "Value": false
+        },
+        {
+          "Key": "TransientFaultQueryPipeline",
+          "Value": false
+        }
+      ],
+      "Enable": true
+    },
+    "ExtendedCookieOption": {
+      "UseDisabledAuthorization": false,
+      "UseAuthenticationCookie": true,
+      "ApplicationName": "WizardApp",
+      "SharedCookieAppName": ".App.Shared",
+      "SharedCookieExpire": "00:10:00",
+      "AccessDeniedPath": "/Errors/401",
+      "LoginPath": "/Home/Index",
+      "LogoutPath": "/Home/Logout",
+      "ErrorPath": "/Error/Index",
+      "RedirectOnCookieExpire": "/Home/Login",
+      "ReturnUrlParameter": "returnUrl",
+      "CookieOption": {
+        "CookieName": "WizardApp",
+        "IsPersistent": true,
+        "IsEssential": true,
+        "UseTicketStore": true,
+        "ExpirationOptions": {
+          "AbsoluteExpiration": "04:00:10",
+          "SlidingExpiration": "00:00:05"
+        }
+      },
+      "UseCookieValidation": false,
+      "CookieValidateOption": {
+        "ClaimsNotAllowEmpty": [
+          "client_id",
+          "is_active"
+        ],
+        "ClaimsMustBe": {
+          "client_id": "6dc64cb55f88452e9164491483261627",
+          "is_active": "True"
+        }
+      },
+      "Enable": true
+    },
+    "ExtendedOpenIdOption": {
+      "AlwaysLoginPrompt": true,
+      "DiscoverEndpoint": "/.well-known/openid-configuration",
+      "AuthorityUrl": "https://localhost:7755",
+      "ResponseType": "code id_token token",
+      "ResponseMode": "form_post",
+      "RequireHttpsMetadata": false,
+      "ClientId": "6dc64cb55f88452e9164491483261627",
+      "ClientSecret": "2098c372cbc74a68810d93ce35bdadd7",
+      "ClientUri": "https://localhost:5021",
+      "RedirectUri": "https://localhost:5021/signin-oidc",
+      "PostLogoutRedirectUris": "https://localhost:5021/signout-callback-oidc",
+      "FrontChannelLogoutUri": "https://localhost:5021/signout-oidc",
+      "SaveTokens": true,
+      "GetClaimsFromUserInfoEndpoint": true,
+      "AllowedScopes": [
+        "openid",
+        "profile",
+        "email",
+        "offline_access",
+        "roles",
+        "client_group",
+        "permissions",
+        "user_type",
+        "user_status"
+      ],
+      "RequiredClaims": [
+        "client_id",
+        "client_prefix"
+      ],
+      "ClaimsForRemove": [
+        "amr",
+        "sid",
+        "idp",
+        "nonce",
+        "aud",
+        "azp",
+        "acr",
+        "iss",
+        "iat",
+        "nbf",
+        "at_hash",
+        "c_hash",
+        "ipaddr",
+        "platf",
+        "ver"
+      ],
+      "UseTokenValidationParameters": false,
+      "TokenValidationParameters": {
+        "NameClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+        "RoleClaimType": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role",
+        "ActorValidationParameters": null,
+        "AuthenticationType": "AuthenticationTypes.Federation",
+        "ClockSkew": "00:05:00",
+        "IgnoreTrailingSlashWhenValidatingAudience": true,
+        "PropertyBag": null,
+        "RequireExpirationTime": true,
+        "RequireSignedTokens": true,
+        "SaveSigninToken": false,
+        "TryAllIssuerSigningKeys": true,
+        "ValidateActor": false,
+        "RequireAudience": true,
+        "ValidateAudience": true,
+        "ValidAudience": "",
+        "ValidAudiences": null,
+        "ValidateIssuer": true,
+        "ValidIssuer": "",
+        "ValidIssuers": null,
+        "ValidateIssuerSigningKey": false,
+        "ValidateLifetime": true,
+        "ValidateTokenReplay": false,
+        "ValidAlgorithms": null,
+        "ValidTypes": null
+      },
+      "UseCookie": false,
+      "CookieOption": {
+        "CookieName": "",
+        "IsPersistent": true,
+        "IsEssential": true,
+        "UseTicketStore": true,
+        "ExpirationOptions": {
+          "AbsoluteExpiration": "04:00:10",
+          "SlidingExpiration": "00:00:05"
+        }
+      },
+      "UseHealthCheck": true,
+      "HealthCheckOption": {
+        "Name": "OPENID_CONNECT",
+        "Tags": [
+          "Auth2",
+          "openIdConnect",
+          "IdentityServer"
+        ],
+        "CheckTimeOut": "00:00:10",
+        "Period": "00:00:30",
+        "Attempts": -1,
+        "Username": "",
+        "Password": "",
+        "ApiKey": "",
+        "Metadata": {}
+      },
+      "Enable": true
+    },
+    "TicketStoreOption": {
+      "StorageType": "Distributed",
+      "StorageTypes": [
+        "InMemory",
+        "Distributed"
+      ],
+      "Enable": true
+    },
+    "RedisDbOptions": {
+      "UseChannelPublisher": true,
+      "DefaultOption": "DEV_APP2_REDIS_CACHE",
+      "ChildOptions": [
+        {
+          "ChannelPrefix": "DEV_APP2_distributed_redis_cache_",
+          "DefaultPatternMode": "Auto",
+          "PatternModes": [
+            "Auto",
+            "Literal",
+            "Pattern"
+          ],
+          "DefaultCommandFlags": "PreferMaster",
+          "CommandFlags": [
+            "None",
+            "DemandMaster",
+            "DemandReplica",
+            "NoRedirect",
+            "PreferMaster",
+            "PreferReplica",
+            "FireAndForget",
+            "NoScriptCache"
+          ],
+          "PublishAsynchronous": true,
+          "SubscribeAsynchronous": true,
+          "ThrowExceptionOnSubscribeFailed": true,
+          "ServiceName": "",
+          "SslProtocols": "None",
+          "SslProtocolTypes": [
+            "None",
+            "Tls",
+            "Tls11",
+            "Tls12",
+            "Tls13"
+          ],
+          "ConnectionString": "",
+          "ConfigurationChannel": "",
+          "KeyPrefix": "DEV_APP2_DISTRIBUTED_REDIS_CACHE:",
+          "Password": "",
+          "AllowAdmin": false,
+          "Ssl": false,
+          "ConnectTimeout": 5000,
+          "SyncTimeout": 1000,
+          "AbortOnConnectFail": true,
+          "Database": 1,
+          "Hosts": [
+            {
+              "Host": "localhost",
+              "Port": 6379
+            }
+          ],
+          "MaxValueLength": 0,
+          "PoolSize": 5,
+          "ExcludeCommands": null,
+          "ServerEnumerationStrategy": {
+            "Mode": "All",
+            "Modes": [
+              "All",
+              "Single"
+            ],
+            "TargetRole": "Any",
+            "TargetRoles": [
+              "Any",
+              "PreferSlave"
+            ],
+            "UnreachableServerAction": "Throw",
+            "UnreachableServerActions": [
+              "Throw",
+              "IgnoreIfOtherAvailable"
+            ]
+          },
+          "UseRetry": true,
+          "RetryOption": {
+            "Attempt": 1,
+            "MinDelay": 0,
+            "MaxDelay": 3,
+            "RetryOnExceptionTypes": [
+              "RedisChannelException"
+            ]
+          },
+          "UseHealthCheck": true,
+          "HealthCheckOption": {
+            "Name": "DEV_APP2_DISTRIBUTED_REDIS_CACHE",
+            "Tags": [
+              "redis"
+            ],
+            "CheckTimeOut": "00:00:10",
+            "Period": "00:00:30",
+            "Attempts": -1,
+            "Username": "",
+            "Password": "",
+            "ApiKey": "",
+            "Metadata": {}
+          },
+          "Enable": true,
+          "OptionKey": "DEV_APP2_DISTRIBUTED_REDIS_CACHE"
+        },
+        {
+          "ChannelPrefix": "DEV_APP2_mongo_redis_cache_",
+          "DefaultPatternMode": "Auto",
+          "PatternModes": [
+            "Auto",
+            "Literal",
+            "Pattern"
+          ],
+          "DefaultCommandFlags": "PreferMaster",
+          "CommandFlags": [
+            "None",
+            "DemandMaster",
+            "DemandReplica",
+            "NoRedirect",
+            "PreferMaster",
+            "PreferReplica",
+            "FireAndForget",
+            "NoScriptCache"
+          ],
+          "PublishAsynchronous": true,
+          "SubscribeAsynchronous": true,
+          "ThrowExceptionOnSubscribeFailed": true,
+          "ServiceName": "",
+          "SslProtocols": "None",
+          "SslProtocolTypes": [
+            "None",
+            "Tls",
+            "Tls11",
+            "Tls12",
+            "Tls13"
+          ],
+          "ConnectionString": "",
+          "ConfigurationChannel": "",
+          "KeyPrefix": "DEV_APP2_MONGO_REDIS_CACHE:",
+          "Password": "",
+          "AllowAdmin": false,
+          "Ssl": false,
+          "ConnectTimeout": 5000,
+          "SyncTimeout": 1000,
+          "AbortOnConnectFail": true,
+          "Database": 2,
+          "Hosts": [
+            {
+              "Host": "localhost",
+              "Port": 6379
+            }
+          ],
+          "MaxValueLength": 0,
+          "PoolSize": 5,
+          "ExcludeCommands": null,
+          "ServerEnumerationStrategy": {
+            "Mode": "All",
+            "Modes": [
+              "All",
+              "Single"
+            ],
+            "TargetRole": "Any",
+            "TargetRoles": [
+              "Any",
+              "PreferSlave"
+            ],
+            "UnreachableServerAction": "Throw",
+            "UnreachableServerActions": [
+              "Throw",
+              "IgnoreIfOtherAvailable"
+            ]
+          },
+          "UseRetry": true,
+          "RetryOption": {
+            "Attempt": 1,
+            "MinDelay": 0,
+            "MaxDelay": 3,
+            "RetryOnExceptionTypes": [
+              "RedisChannelException"
+            ]
+          },
+          "UseHealthCheck": true,
+          "HealthCheckOption": {
+            "Name": "DEV_APP2_MONGO_REDIS_CACHE",
+            "Tags": [
+              "redis",
+              "MONGO"
+            ],
+            "CheckTimeOut": "00:00:10",
+            "Period": "00:00:30",
+            "Attempts": -1,
+            "Username": "",
+            "Password": "",
+            "ApiKey": "",
+            "Metadata": {}
+          },
+          "Enable": true,
+          "OptionKey": "DEV_APP2_MONGO_REDIS_CACHE"
+        },
+        {
+          "ChannelPrefix": "DEV_APP2_redis_cache_",
+          "DefaultPatternMode": "Auto",
+          "PatternModes": [
+            "Auto",
+            "Literal",
+            "Pattern"
+          ],
+          "DefaultCommandFlags": "PreferMaster",
+          "CommandFlags": [
+            "None",
+            "DemandMaster",
+            "DemandReplica",
+            "NoRedirect",
+            "PreferMaster",
+            "PreferReplica",
+            "FireAndForget",
+            "NoScriptCache"
+          ],
+          "PublishAsynchronous": true,
+          "SubscribeAsynchronous": false,
+          "ThrowExceptionOnSubscribeFailed": true,
+          "ServiceName": "",
+          "SslProtocols": "None",
+          "SslProtocolTypes": [
+            "None",
+            "Tls",
+            "Tls11",
+            "Tls12",
+            "Tls13"
+          ],
+          "ConnectionString": "",
+          "ConfigurationChannel": "",
+          "KeyPrefix": "DEV_APP2_REDIS_CACHE:",
+          "Password": "",
+          "AllowAdmin": true,
+          "Ssl": false,
+          "ConnectTimeout": 6000,
+          "SyncTimeout": 1000,
+          "AbortOnConnectFail": true,
+          "Database": 0,
+          "Hosts": [
+            {
+              "Host": "localhost",
+              "Port": 6379
+            }
+          ],
+          "MaxValueLength": 0,
+          "PoolSize": 5,
+          "ExcludeCommands": null,
+          "ServerEnumerationStrategy": {
+            "Mode": "All",
+            "Modes": [
+              "All",
+              "Single"
+            ],
+            "TargetRole": "Any",
+            "TargetRoles": [
+              "Any",
+              "PreferSlave"
+            ],
+            "UnreachableServerAction": "Throw",
+            "UnreachableServerActions": [
+              "Throw",
+              "IgnoreIfOtherAvailable"
+            ]
+          },
+          "UseRetry": true,
+          "RetryOption": {
+            "Attempt": 0,
+            "MinDelay": 0,
+            "MaxDelay": 0,
+            "RetryOnExceptionTypes": []
+          },
+          "UseHealthCheck": true,
+          "HealthCheckOption": {
+            "Name": "DEV_APP2_REDIS_CACHE",
+            "Tags": [
+              "redis"
+            ],
+            "CheckTimeOut": "00:00:10",
+            "Period": "00:00:30",
+            "Attempts": -1,
+            "Username": "",
+            "Password": "",
+            "ApiKey": "",
+            "Metadata": {}
+          },
+          "Enable": true,
+          "OptionKey": "DEV_APP2_REDIS_CACHE"
+        }
+      ],
+      "Enable": true
+    },
+    "RabbitMqOption": {
+      "UseBusHandler": true,
+      "UseAutoModelBuilder": true,
+      "Exchange": {
+        "Durable": true,
+        "AutoDelete": false,
+        "Type": "Topic",
+        "ExchangeTypes": [
+          "Unknown",
+          "Topic",
+          "Direct",
+          "Fanout",
+          "Headers"
+        ]
+      },
+      "Queue": {
+        "AutoDelete": false,
+        "Durable": true,
+        "Exclusive": false
+      },
+      "ThrowOnModelBuild": true,
+      "ModelBuilderStrategy": "CreateIfNotExist",
+      "ModelBuilderStrategies": [
+        "Ignore",
+        "DeleteIfExist",
+        "CreateIfNotExist",
+        "DeleteAndCreateOnce",
+        "AlwaysDeleteAndCreate",
+        "IgnoreExchange",
+        "AlwaysDeleteExchange",
+        "CreateExchangeIfNotExist",
+        "DeleteAndCreateExchangeOnce",
+        "AlwaysDeleteAndCreateExchnage",
+        "IgnoreQueue",
+        "DeleteQueueIfExist",
+        "CreateQueueIfNotExist",
+        "DeleteAndCreateQueueOnce",
+        "AlwaysDeleteAndCreateQueue"
+      ],
+      "ApiBaseUrl": "http://localhost:15672",
+      "ExchangeName": "dev",
+      "PublishAsynchronous": true,
+      "SubscribeAsynchronous": false,
+      "ThrowExceptionOnSubscribeFailed": true,
+      "UseRetryOption": true,
+      "RetryOption": {
+        "Attempt": 1,
+        "MinDelay": 0,
+        "MaxDelay": 3,
+        "RetryOnExceptionTypes": [
+          "MessageBusException"
+        ]
+      },
+      "WithRequeuing": false,
+      "RequestTimeout": "00:00:10",
+      "PublishConfirmTimeout": "00:00:10",
+      "GracefulShutdown": "00:00:10",
+      "RecoveryInterval": "00:00:10",
+      "RouteWithGlobalId": true,
+      "AutomaticRecovery": true,
+      "TopologyRecovery": true,
+      "PersistentDeliveryMode": true,
+      "AutoCloseConnection": true,
+      "UseSsl": false,
+      "Ssl": {
+        "AcceptablePolicyErrors": "None",
+        "CertPassphrase": "",
+        "CertPath": "",
+        "Enabled": false,
+        "ServerName": "",
+        "Version": "Tls",
+        "SslPolicyErrorsTypes": [
+          "None",
+          "RemoteCertificateNotAvailable",
+          "RemoteCertificateNameMismatch",
+          "RemoteCertificateChainErrors"
+        ],
+        "SslProtocolTypes": [
+          "None",
+          "Tls",
+          "Tls11",
+          "Tls12",
+          "Tls13"
+        ]
+      },
+      "VirtualHost": "/",
+      "Username": "guest",
+      "Password": "guest",
+      "Port": 5672,
+      "HostNames": [
+        "localhost"
+      ],
+      "MessageNamingConventions": [],
+      "UseHealthCheck": true,
+      "HealthCheckOption": {
+        "Name": "f0472d7664a74225abcbe24d36e220e4",
+        "Tags": [],
+        "CheckTimeOut": "00:00:10",
+        "Period": "00:00:30",
+        "Attempts": -1,
+        "Username": "",
+        "Password": "",
+        "ApiKey": "",
+        "Metadata": {}
+      },
+      "DefaultPlugins": [
+        {
+          "Key": "UseAttributeRouting",
+          "Value": true
+        },
+        {
+          "Key": "UseContextForwarding",
+          "Value": true
+        },
+        {
+          "Key": "UseMessageContext",
+          "Value": true
+        },
+        {
+          "Key": "UseRetryLater",
+          "Value": true
+        },
+        {
+          "Key": "UseRetryStrategy",
+          "Value": true
+        },
+        {
+          "Key": "UseAvoidDuplicateMessage",
+          "Value": false
+        }
+      ],
+      "Enable": true
+    },
+    "InboxOutboxOption": {
+      "OutboxMessageExpiration": "08:00:00",
+      "InboxMessageExpiration": "08:00:00",
+      "PublishingInterval": "00:00:10",
+      "ProcessType": "Sequential",
+      "ProcessTypes": [
+        "Sequential",
+        "Parallel"
+      ],
+      "PersistenceProvider": "HostMemory",
+      "PersistenceProviders": [
+        "HostMemory",
+        "Distributed",
+        "Redis",
+        "Mongo",
+        "Ef"
+      ],
+      "PersistenceProviderOptionKey": "",
+      "Enable": true
+    },
+    "EmailServerOption": {
+      "UseSmtpServer": false,
+      "UsePopServer": false,
+      "SmtpServer": "smtp.gmail.com",
+      "SmtpPort": 587,
+      "SmtpUsername": "hmpsoftwaresolution@gmail.com",
+      "SmtpPassword": "qylkrqjaworiiskp",
+      "PopServer": "",
+      "PopPort": 0,
+      "PopUsername": "",
+      "PopPassword": "",
+      "LocalDomain": "",
+      "UsePickupFolder": false,
+      "PickupFolder": "C:\\smtppickup",
+      "UseHealthCheck": true,
+      "HealthCheckOption": {
+        "Name": "EMAIL_SERVER",
+        "Tags": [
+          "Mail server"
+        ],
+        "CheckTimeOut": "00:00:10",
+        "Period": "00:00:30",
+        "Attempts": -1,
+        "Username": "",
+        "Password": "",
+        "ApiKey": "",
+        "Metadata": {}
+      },
+      "Enable": true
+    },
+    "GlobalizationOption": {
+      "UseResourceManager": true,
+      "CookieName": "DEV-",
+      "DefaultSupportedCulture": "de",
+      "SupportedCultures": [
+        "en",
+        "de"
+      ],
+      "DateFormatString": "",
+      "DefaultCultureCookieExpires": "365.00:00:00",
+      "Enable": true
+    },
+    "ExceptionOption": {
+      "RedirectOptions": {
+        "ControllerName": "Errors",
+        "ActionName": "Index",
+        "RouteData": "",
+        "Enable": true
+      },
+      "ErrorViewName": "Error",
+      "UseTempDataNotification": true,
+      "Enable": true
+    },
+    "WorkContextOption": {
+      "UseUserContext": true,
+      "UseHttpRequestAccessor": true,
+      "Enable": true
+    },
+    "DashboardOption": {
+      "Title": "HMP Dashboard",
+      "MustBeSecure": false,
+      "Policy": "DashboardPolicy",
+      "CultureCookieName": ".AspNetCore.Culture",
+      "UiPath": "/Dashboard",
+      "Enable": true
+    },
+    "SignalROption": {
+      "Url": "https://localhost:5023/clientPubSub",
+      "UseAutomaticReconnect": false,
+      "ReconnectDelays": null,
+      "UseHubConnection": false,
+      "HubConnectionOption": null,
+      "UseHealthCheck": false,
+      "HealthCheckOption": null,
+      "Enable": true
+    },
+    "HealthChecksOption": {
+      "UseUi": true,
+      "HealthUiOption": {
+        "AsideMenuOpened": true,
+        "HeaderText": "Health Checks Status",
+        "DisableMigrations": true,
+        "MaximumExecutionHistoriesPerEndpoint": 100,
+        "EvaluationTimeInSeconds": 10,
+        "ApiMaxActiveRequests": 3,
+        "MinimumSecondsBetweenFailureNotifications": 600,
+        "MustBeSecure": false,
+        "SpecialsPolicy": "",
+        "UseRelativeApiPath": true,
+        "UseRelativeWebhookPath": true,
+        "UseRelativeResourcesPath": true,
+        "UiPath": "/health-ui",
+        "ApiPath": "/health-api",
+        "WebhookPath": "/health-webhooks",
+        "ResourcesPath": "wwwroot/health-ui",
+        "UseDefaultStyle": true,
+        "DefaultStyle": "health-ui.css",
+        "DefaultLogo": "health-logo-64x64.png",
+        "CustomStylesheets": [
+          "health-ui.css"
+        ]
+      },
+      "HealthEndpointOptions": [
+        {
+          "Name": "Health-Check",
+          "Uri": "/health"
+        }
+      ],
+      "HealthUiWebHookOptions": [],
+      "Enable": true
+    }
+  }
+}
